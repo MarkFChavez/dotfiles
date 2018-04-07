@@ -5,6 +5,12 @@ alias mkdir="mkdir -p"
 alias e="$EDITOR"
 alias v="$VISUAL"
 
+# Dotfiles
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias vim-bundles="vim ~/.vimrc.bundles"
+alias gitconfig="vim ~/.gitconfig"
+
 # Bundler
 alias b="bundle"
 

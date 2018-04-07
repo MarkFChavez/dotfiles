@@ -1,6 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# load custom executable functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/markchavez/.oh-my-zsh
 

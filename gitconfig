@@ -27,3 +27,7 @@
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+[user]
+  name = Mark Chavez
+  email = markchav3z@gmail.com
+  

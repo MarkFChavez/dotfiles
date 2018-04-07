@@ -18,6 +18,7 @@ alias gpf="git push -f"
 alias gpl="git pull"
 alias gcp="git cherry-pick"
 alias gco="git checkout"
+alias glog="git log --oneline --decorate --color --graph"
 
 # Rails
 alias rc="bundle exec rails console"

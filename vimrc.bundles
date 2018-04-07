@@ -39,6 +39,7 @@ Plug 'vim-scripts/tComment'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'thoughtbot/vim-rspec'
 
 if g:has_async
   Plug 'w0rp/ale'

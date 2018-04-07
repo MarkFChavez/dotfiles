@@ -100,6 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Load local aliases
+[ -f ~/.aliases ] && source ~/.aliases
+
 autoload -U promptinit; promptinit
 prompt pure
 

@@ -33,7 +33,7 @@ map <C-t> :call RunCurrentSpecFile()<CR>
 map <C-s> :call RunNearestSpec()<CR>
 map <C-l> :call RunLastSpec()<CR>
 map <C-a> :call RunAllSpecs()<CR>
-let g:rspec_command = "!bundle exec rspec --drb {spec}"
+let g:rspec_command = "!bundle exec rspec {spec}"
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

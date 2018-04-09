@@ -3,7 +3,7 @@ alias ll="ls -al"
 alias ln="ln -v"
 alias mkdir="mkdir -p"
 alias e="$EDITOR"
-alias v="$VISUAL"
+alias v="vim ."
 
 # Dotfiles
 alias dotfiles="cd ~/dotfiles && vim ."
@@ -17,7 +17,9 @@ alias gitconfig="vim ~/.gitconfig"
 alias b="bundle"
 
 # Git
+alias s="git status -s"
 alias gd="git diff"
+alias gs="git show"
 alias gcp="git cherry-pick"
 alias gco="git checkout"
 alias glog="git log --oneline --decorate --color --graph"

@@ -29,11 +29,15 @@ alias push="git push"
 alias push!="git push -f"
 alias pull="git pull"
 
-# Rails
+# Rails utilities
 alias rc="bundle exec rails console"
 alias rs="bundle exec rails server"
-alias migrate="rails db:migrate db:rollback && rake db:migrate db:test:prepare"
-alias s="rspec"
+
+# Rails db utilities
+alias setup="rails db:setup"
+alias seed="rails db:seed"
+alias migrate="rails db:migrate db:rollback && rails db:migrate db:test:prepare"
+alias rollback="rails db:rollback"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'

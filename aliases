@@ -18,6 +18,7 @@ alias b="bundle"
 
 # Git
 alias s="git status -s"
+alias gcl="git branch | grep -v 'master' | xargs git branch -D"
 alias gd="git diff"
 alias gs="git show"
 alias gcp="git cherry-pick"
@@ -41,6 +42,12 @@ alias setup="rails db:setup"
 alias seed="rails db:seed"
 alias migrate="rails db:migrate db:rollback && rails db:migrate db:test:prepare"
 alias rollback="rails db:rollback"
+alias rgm="rails g migration"
+
+# Docker
+alias dc="docker-compose"
+alias dcu="docker-compose up"
+alias dcd="docker-compose down"
 
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'

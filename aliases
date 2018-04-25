@@ -18,9 +18,12 @@ alias b="bundle"
 
 # Git
 alias s="git status -s"
+alias gs="git show"
+alias gr="git rebase"
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
 alias gcl="git branch | grep -v 'master' | xargs git branch -D"
 alias gd="git diff"
-alias gs="git show"
 alias gcp="git cherry-pick"
 alias gco="git checkout"
 alias glog="git log --oneline --decorate --color --graph"

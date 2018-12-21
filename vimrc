@@ -2,6 +2,7 @@
 let mapleader = ","
 
 set backspace=2   " Backspace deletes like most programs in insert mode
+set guifont=Inconsolata-g\ for\ Powerline:h18
 set nobackup
 set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
@@ -12,10 +13,26 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set relativenumber
+set ff=unix
 
-syntax enable
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLOR
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set t_Co=256 " 256 colors
 set background=dark
-colorscheme solarized
+color grb256
+
+" Grepper
+let g:grepper = {}
+let g:grepper.tools = ['grep', 'git', 'rg']
+
+" Search for the current word
+nnoremap <leader>* :Grepper -cword -noprompt<cr>
+nnoremap <leader>g :Grepper -tool git<cr>
+
+" Search for the current selection
+nmap gs <plug>(GrepperOperator)
+xmap gs <plug>(GrepperOperator)
 
 " NERDTree
 nnoremap <leader><Tab> :NERDTree<CR>
@@ -27,21 +44,29 @@ nnoremap <leader>t :FZF!<CR>
 nnoremap vv :vsp<CR>
 nnoremap ss :sp<CR>
 
+" vim-iterm-rspec
+nnoremap <Leader>rs :RunItermSpec<cr>
+nnoremap <Leader>rl :RunItermSpecLine<cr>
+
 " RSpec.vim mappings
-map <C-t> :call RunCurrentSpecFile()<CR>
-map <C-s> :call RunNearestSpec()<CR>
-map <C-l> :call RunLastSpec()<CR>
-map <C-a> :call RunAllSpecs()<CR>
-let g:rspec_command = "!bundle exec rspec {spec}"
+" let g:rspec_command = "bundle exec rspec {spec}"
+" let g:rspec_runner = "os_x_iterm2"
+"
+" map <Leader>rt :call RunCurrentSpecFile()<CR>
+" map <Leader>rs :call RunNearestSpec()<CR>
+" map <Leader>rl :call RunAllSpecs()<CR>
+
+" Using vim-test
+" let test#strategy = "dispatch"
+" nmap <Leader>rt :TestFile<CR>
+" nmap <Leader>ra :TestSuite<CR>
+" nmap <Leader>rs :TestNearest<CR>
+
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
-endif
-
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
 endif
 
 " Load matchit.vim, but only if the user hasn't installed a newer version.
@@ -50,34 +75,6 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 filetype plugin indent on
-
-augroup vimrcEx
-  autocmd!
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
-
-  " Set syntax highlighting for specific file types
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-  autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-
-  " ALE linting events
-  if g:has_async
-    set updatetime=1000
-    let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Lint()
-    autocmd CursorHoldI * call ale#Lint()
-    autocmd InsertEnter * call ale#Lint()
-    autocmd InsertLeave * call ale#Lint()
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
-augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
@@ -90,7 +87,7 @@ set shiftround
 set expandtab
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+" set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
@@ -128,7 +125,7 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " Run commands that require an interactive shell
-nnoremap <Leader>r :RunInInteractiveShell<Space>
+" nnoremap <Leader>r :RunInInteractiveShell<Space>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -157,7 +154,33 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+packadd minpac
+call minpac#init()
+
+" Define bundles via Github repos
+call minpac#add('christoomey/vim-run-interactive')
+call minpac#add('elixir-lang/vim-elixir')
+call minpac#add('posva/vim-vue')
+call minpac#add('fatih/vim-go')
+call minpac#add('janko-m/vim-test')
+call minpac#add('kchmck/vim-coffee-script')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('pbrisbin/vim-mkdir')
+call minpac#add('slim-template/vim-slim')
+call minpac#add('tpope/vim-bundler')
+call minpac#add('tpope/vim-endwise')
+call minpac#add('tpope/vim-eunuch')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-projectionist')
+call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-rake')
+call minpac#add('tpope/vim-repeat')
+call minpac#add('tpope/vim-rhubarb')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-dispatch')
+call minpac#add('vim-ruby/vim-ruby')
+call minpac#add('thoughtbot/vim-rspec')
+call minpac#add('skwp/vim-iterm-rspec')
+call minpac#add('vim-scripts/tComment')
+call minpac#add('scrooloose/nerdtree')
+

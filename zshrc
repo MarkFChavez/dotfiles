@@ -6,14 +6,19 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
+export VISUAL=vim
+export VIMCONFIG=~/.vim
+export VIMDATA=~/.vim
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/markchavez/.oh-my-zsh
 
+export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -108,21 +113,17 @@ source $ZSH/oh-my-zsh.sh
 # Load local aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
-autoload -U promptinit; promptinit
-prompt pure
-
-source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 hitch() {
   command hitch "$@"
   if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
 }
 alias unhitch='hitch -u'
+
+eval "$(direnv hook zsh)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+alias config='/usr/bin/git --git-dir=/Users/markchavez/.cfg/ --work-tree=/Users/markchavez'

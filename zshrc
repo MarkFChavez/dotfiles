@@ -126,4 +126,3 @@ if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-alias config='/usr/bin/git --git-dir=/Users/markchavez/.cfg/ --work-tree=/Users/markchavez'

@@ -1,4 +1,4 @@
-Mark's dotfiles
+Personal Dotfiles
 ===================
 
 Requirements

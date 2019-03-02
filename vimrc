@@ -46,16 +46,14 @@ nnoremap vv :vsp<CR>
 nnoremap ss :sp<CR>
 
 " vim-iterm-rspec
-nnoremap <Leader>rs :RunItermSpec<cr>
-nnoremap <Leader>rl :RunItermSpecLine<cr>
+" nnoremap <Leader>rs :RunItermSpec<cr>
+" nnoremap <Leader>rl :RunItermSpecLine<cr>
 
 " RSpec.vim mappings
-" let g:rspec_command = "bundle exec rspec {spec}"
-" let g:rspec_runner = "os_x_iterm2"
-"
-" map <Leader>rt :call RunCurrentSpecFile()<CR>
-" map <Leader>rs :call RunNearestSpec()<CR>
-" map <Leader>rl :call RunAllSpecs()<CR>
+let g:rspec_command = "bundle exec rspec {spec}"
+map <Leader>rs :call RunCurrentSpecFile()<CR>
+map <Leader>rl :call RunNearestSpec()<CR>
+map <Leader>rr :call RunLastSpec()<CR>
 
 " Using vim-test
 " let test#strategy = "dispatch"

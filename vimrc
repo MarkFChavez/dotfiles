@@ -50,10 +50,14 @@ nnoremap ss :sp<CR>
 " nnoremap <Leader>rl :RunItermSpecLine<cr>
 
 " RSpec.vim mappings
-let g:rspec_command = "bundle exec rspec {spec}"
+let g:rspec_command = "!bundle exec rspec {spec}"
 map <Leader>rs :call RunCurrentSpecFile()<CR>
 map <Leader>rl :call RunNearestSpec()<CR>
 map <Leader>rr :call RunLastSpec()<CR>
+
+" tslime.vim
+" let g:tslime_always_current_session = 1
+" let g:tslime_always_current_window = 1
 
 " Using vim-test
 " let test#strategy = "dispatch"
@@ -179,7 +183,7 @@ call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('vim-ruby/vim-ruby')
 call minpac#add('thoughtbot/vim-rspec')
+call minpac#add('jgdavey/tslime.vim')
 call minpac#add('skwp/vim-iterm-rspec')
 call minpac#add('vim-scripts/tComment')
 call minpac#add('scrooloose/nerdtree')
-

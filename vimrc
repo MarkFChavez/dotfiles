@@ -27,10 +27,12 @@ color grb256
 " Grepper
 let g:grepper = {}
 let g:grepper.tools = ['grep', 'git', 'rg']
+let g:grepper.dir = 'repo,filecwd'
 
 " Search for the current word
 nnoremap <leader>* :Grepper -cword -noprompt<cr>
 nnoremap <leader>g :Grepper -tool git<cr>
+nnoremap <leader>y :Grepper<cr>
 
 " Search for the current selection
 nmap gs <plug>(GrepperOperator)

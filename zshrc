@@ -88,6 +88,7 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+export EDITOR='mvim'
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -126,3 +127,8 @@ if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+source ~/.rvm/scripts/rvm

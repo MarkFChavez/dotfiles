@@ -4,7 +4,7 @@ let mapleader = ","
 set backspace=2   " Backspace deletes like most programs in insert mode
 set guifont=Inconsolata-g\ for\ Powerline:h18
 set nobackup
-set nowrap
+set wrap
 set nowritebackup
 set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 set history=50
@@ -49,14 +49,14 @@ nnoremap vv :vsp<CR>
 nnoremap ss :sp<CR>
 
 " vim-iterm-rspec
-" nnoremap <Leader>rs :RunItermSpec<cr>
-" nnoremap <Leader>rl :RunItermSpecLine<cr>
+nnoremap <Leader>rs :RunItermSpec<cr>
+nnoremap <Leader>rl :RunItermSpecLine<cr>
 
 " RSpec.vim mappings
-let g:rspec_command = "!bundle exec rspec {spec}"
-map <Leader>rs :call RunCurrentSpecFile()<CR>
-map <Leader>rl :call RunNearestSpec()<CR>
-map <Leader>rr :call RunLastSpec()<CR>
+" let g:rspec_command = "!bundle exec rspec {spec}"
+" map <Leader>rs :call RunCurrentSpecFile()<CR>
+" map <Leader>rl :call RunNearestSpec()<CR>
+" map <Leader>rr :call RunLastSpec()<CR>
 
 " tslime.vim
 " let g:tslime_always_current_session = 1
@@ -190,3 +190,4 @@ call minpac#add('jgdavey/tslime.vim')
 call minpac#add('skwp/vim-iterm-rspec')
 call minpac#add('vim-scripts/tComment')
 call minpac#add('scrooloose/nerdtree')
+call minpac#add('evanleck/vim-svelte')

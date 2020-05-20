@@ -177,6 +177,8 @@ What's in it?
 [vim](http://www.vim.org/) configuration:
 
 * [Ctrl-P](https://github.com/ctrlpvim/ctrlp.vim) for fuzzy file/buffer/tag finding.
+* [GReplace](https://github.com/skwp/greplace.vim) for find and replace across
+  files.
 * [Rails.vim](https://github.com/tpope/vim-rails) for enhanced navigation of
   Rails file structure via `gf` and `:A` (alternate), `:Rextract` partials,
   `:Rinvert` migrations, etc.
@@ -189,7 +191,7 @@ What's in it?
 * Map `<leader>ct` to re-index [Exuberant Ctags](http://ctags.sourceforge.net/).
 * Use [vim-mkdir](https://github.com/pbrisbin/vim-mkdir) for automatically
   creating non-existing directories before writing the buffer.
-* Use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins.
+* Use [minpac](https://github.com/k-takata/minpac) to manage plugins.
 
 [tmux](http://robots.thoughtbot.com/a-tmux-crash-course)
 configuration:

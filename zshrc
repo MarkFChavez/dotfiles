@@ -10,8 +10,11 @@ export VISUAL=vim
 export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
 
+# Skip the verification of insecure directories
+export ZSH_DISABLE_COMPFIX=true
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/markchavez/.oh-my-zsh
+export ZSH=/Users/markfchavez/.oh-my-zsh
 
 export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin
 
@@ -114,13 +117,11 @@ export EDITOR='mvim'
 # Load local aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
-hitch() {
-  command hitch "$@"
-  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
-}
-alias unhitch='hitch -u'
-
-eval "$(direnv hook zsh)"
+# hitch() {
+#   command hitch "$@"
+#   if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
+# }
+# alias unhitch='hitch -u'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc'; fi

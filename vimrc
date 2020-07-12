@@ -2,7 +2,7 @@
 let mapleader = ","
 
 set backspace=2   " Backspace deletes like most programs in insert mode
-set guifont=Inconsolata-g\ for\ Powerline:h18
+set guifont=Inconsolata-g:h18
 set nobackup
 set wrap
 set nowritebackup

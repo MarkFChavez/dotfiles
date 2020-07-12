@@ -17,6 +17,8 @@ set autoread      " Do not ask me to load the file if there's a new copy
 set relativenumber
 set ff=unix
 
+set rtp+=/usr/local/opt/fzf
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

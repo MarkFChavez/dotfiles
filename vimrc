@@ -20,9 +20,10 @@ set ff=unix
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256 " 256 colors
-set background=dark
-color grb256
+syntax enable
+let g:solarized_termcolors=256
+set background=light
+colorscheme solarized
 
 " Grepper
 let g:grepper = {}

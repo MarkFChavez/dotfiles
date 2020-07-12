@@ -130,3 +130,5 @@ if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/
 if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(direnv hook zsh)"

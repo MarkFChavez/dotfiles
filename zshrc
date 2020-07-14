@@ -117,17 +117,11 @@ export EDITOR='mvim'
 # Load local aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
-# hitch() {
-#   command hitch "$@"
-#   if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
-# }
-# alias unhitch='hitch -u'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/markchavez/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/markchavez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+hitch() {
+  command hitch "$@"
+  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
+}
+alias unhitch='hitch -u'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

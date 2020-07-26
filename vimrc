@@ -41,6 +41,15 @@ nnoremap <leader>y :Grepper<cr>
 nmap gs <plug>(GrepperOperator)
 xmap gs <plug>(GrepperOperator)
 
+" xmpfilter
+autocmd FileType ruby nmap <buffer> <leader>4 <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <leader>4 <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <leader>4 <Plug>(xmpfilter-mark)
+
+autocmd FileType ruby nmap <buffer> <leader>5 <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <leader>5 <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <leader>5 <Plug>(xmpfilter-run)
+
 " NERDTree
 nnoremap <leader><Tab> :NERDTree<CR>
 
@@ -194,5 +203,5 @@ call minpac#add('skwp/vim-iterm-rspec')
 call minpac#add('skwp/greplace.vim')
 call minpac#add('vim-scripts/tComment')
 call minpac#add('scrooloose/nerdtree')
-call minpac#add('evanleck/vim-svelte')
 call minpac#add('mhinz/vim-grepper')
+call minpac#add('t9md/vim-ruby-xmpfilter')
